@@ -4,30 +4,30 @@ public abstract class Thing {
     // dir: 0=North, 1=East, 2=South, 3=West.
     // timeSinceLast: this is only important for "TypeB" Things.
 
-    public int row, col, dir, timeSinceLast;
-    public char lab = 'r';
-    public boolean isTypeB;
+    protected int row;
+    protected int col;
+    protected int dir;
+    protected int timeSinceLast;
+    protected char lab = 'r';
+    protected boolean isTypeB;
 
-    protected Random rand;
-
-    protected Thing(int row, int col, char lab, int dir, Random rand) {
+    protected Thing(int row, int col, char lab, int dir) {
         this.row = row;
         this.col = col;
         this.lab = lab;
         this.dir = dir;
         this.timeSinceLast = 0;
         this.isTypeB = false;
-        this.rand = rand;
     }
 
-    protected void rightTurn() {
+    public void rightTurn() {
         this.dir = (this.dir + 1) % 4; 
     }
-    protected void leftTurn()  { 
+    public void leftTurn()  { 
         this.dir = (this.dir + 3) % 4; 
     }
 
-    public abstract void maybeTurn();
+    public abstract void maybeTurn(Random rand);
 
     public void step() {
         final int[] dc = {

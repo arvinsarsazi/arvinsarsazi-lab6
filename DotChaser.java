@@ -19,16 +19,18 @@ public class DotChaser {
     while( true ) {
       // Every N rounds, add another typeA and typeB Thing.
       if( count % N == 0 ) {
-
-        list.add(new TypeA(45,50,'r',0,rand));
-        list.add(new TypeB(55,50,'b',0,rand));
+        
+        list.addThing(new TypeA(45,50,'r',0));
+        list.addThing(new TypeB(55,50,'b',0));
+        list.addThing(new TypeC(50, 50,'y',rand.nextInt(4)));
+        
       }
       
       list.printAll();
       System.out.println("done");
       System.out.flush();
 
-      list.moveAll();
+      list.moveAll(rand);
 
       count++;
     }

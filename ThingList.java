@@ -1,6 +1,8 @@
+import java.util.Random;
+
 public class ThingList {
 
-    private static class Node {
+    private class Node {
         Thing data;
         Node next;
         Node(Thing data, Node next) {
@@ -11,7 +13,7 @@ public class ThingList {
 
     private Node head = null;
 
-    public void add(Thing t) {
+    public void addThing(Thing t) {
 
         Node newhead = new Node(t, null);
         newhead.next = head;
@@ -28,9 +30,9 @@ public class ThingList {
     }
 
     
-    public void moveAll() {
+    public void moveAll(Random rand) {
         for (Node H = head; H != null; H = H.next) {
-            H.data.maybeTurn();
+            H.data.maybeTurn(rand);
             H.data.step();
         }
     }
