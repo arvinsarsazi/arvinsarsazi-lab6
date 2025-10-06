@@ -2,7 +2,7 @@ import java.util.Random;
 
 public class TypeA extends Thing {
 
-    public TypeA(int row, int col, Random rand) {
+    public TypeA(int row, int col, char lab, int dir, Random rand) {
         
         super(row, col, 'r', 0, rand);
         

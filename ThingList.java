@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class ThingList {
 
     private static class Node {
@@ -22,7 +20,7 @@ public class ThingList {
     }
 
     public void printAll() {
-        for (Node T = head; T != null; T = n.next) {
+        for (Node T = head; T != null; T = T.next) {
 
             System.out.println(T.data.row + " " + T.data.col + " " + T.data.lab);
             
